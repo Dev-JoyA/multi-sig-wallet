@@ -7,6 +7,9 @@ contract MultiSigWallet {
     address public walletAddress;
 
     enum Signed {FULLYSIGNED, PARTIALYSIGNED, NOTSIGNED}
+    
+    error AlreadySigned(address signer);
+    error NotAuthorized(address signer);
 
     mapping (address => bool) public hasSigned;
 
